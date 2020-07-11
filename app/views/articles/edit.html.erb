@@ -1,36 +1,4 @@
 <h1> this is editing page</h1>
 
-<% if@article.errors.any? %>
-<ul>
-<% @article.errors.full_messages.each do |msg| %>
+<%= render 'articles/form'%>
 
-<li><%= msg %></li>
-<%end%>
-</ul>
-<%end%>
-
-
-<%= form_for @article do |f| %>
-
-<p>
-<%=f.label :title%>
-</p>
-<p>
-<%=f.text_field :title%>
-</p>
-
-<p>
-<%=f.label :discription%>
-</p>
-<p>
-<%=f.text_area :discription%>
-</p>
-
-<p>
-<%=f.submit%>
-</p>
-
-
-<%end%>
-
-<%= link_to "back to articles", articles_path%>
