@@ -1,35 +1,56 @@
-<% if@article.errors.any? %>
-<ul>
-<% @article.errors.full_messages.each do |msg| %>
 
-<li><%= msg %></li>
+<%= render'share/error', obj: @article%>
 
-<%end%>
-</ul>
-<%end%>
-
+<div class="row">
+ <div class="container"> 
 <%= form_for @article do |f| %>
 
 <p>
-<%=f.label :title%>
-</p>
-<p>
-<%=f.text_field :title%>
+<div class="form-row">
+    <div class="col-md-8 mb-4 offset-2">
+      <%=f.label :title%>
+      <%=f.text_field :title, class:"form-control is-valid", placeholder:"enter title"%>
+      <div class="valid-feedback">
+        Looks good!
+        </div>
+        </div>
+        </div>
+
+
 </p>
 
 <p>
-<%=f.label :discription%>
-</p>
-<p>
-<%=f.text_area :discription%>
+<div class="form-row">
+    <div class="col-md-8 mb-4 offset-2 row-10">
+      <%=f.label :discription%>
+      <%=f.text_area :discription, rows:10, class:"form-control is-valid",placeholder:"type the discription"%>
+      <div class="valid-feedback">
+        Looks good!
+        </div>
+        </div>
+        </div>
+
+
 </p>
 
+
+
+
 <p>
-<%=f.submit%>
-</p>
+<div class="form-row">
+    <div class="col-md-8 mb-4 offset-5">
+      <%=f.submit%>
+        </div>
+       </div></p>
+
+
+
 
 
 <%end%>
+</div>
+</div>
+</div>
 
 
-<%= link_to "back to list", articles_path%>
+<p align="center"><%= link_to "BACK TO ALL ARTICLE", articles_path, class:"btn btn-primary" %></p>
