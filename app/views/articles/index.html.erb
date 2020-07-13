@@ -9,7 +9,7 @@
 
 
 <div class="card-header bg-danger">
-<%= article.title %>
+<%= link_to (article.title), article_path(article), class: 'btn btn-success' %>
 </div>
 <div class="card-body">
 <h5 class="card-title">Discription:</h5>

@@ -1,7 +1,7 @@
 <h1 align="center"> Show the Article</h1>
 <div class="container">
 <div class="card text-center">
-<div class="card-header">
+<div class="card-header bg-danger">
 <%= @article.title %>
 </div>
 
@@ -10,7 +10,7 @@
 <p class="card-text"><%=@article.discription%>
 </p>
 </div>
-<div class="card-footer text-muted">
+<div class="card-footer text-muted bg-success">
     <%= link_to "Edit", edit_article_path(@article), class:"btn btn-primary" %>
     
 
