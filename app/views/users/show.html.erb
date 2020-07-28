@@ -1,0 +1,22 @@
+<h1 align="center"> Show the Users</h1>
+<div class="container">
+<div class="card text-center">
+<div class="card-header bg-danger">
+<%= @user.username %>
+</div>
+
+<div class="card-body">
+<h5 class="card-title">Email</h5>
+<p class="card-text"><%=@user.email%>
+</p>
+</div>
+<div class="card-footer text-muted bg-success">
+    <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %>
+    
+
+    <%= link_to "delete", user_path(@user), method: :delete, data:{confirm:"are you sure to delete this"}, class:"btn btn-danger" %>
+    <%=link_to "All Users",users_path, class: "btn btn-success"%>
+    
+  </div>
+</div>
+</div>
