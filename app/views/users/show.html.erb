@@ -1,22 +1,12 @@
-<h1 align="center"> Show the Users</h1>
+<h1 align="center"> Wel Come to <%= @user.username %> page</h1>
 <div class="container">
-<div class="card text-center">
-<div class="card-header bg-danger">
-<%= @user.username %>
-</div>
+<p align="center"><%= has_gravatar @user, size: 150  %></p>
 
-<div class="card-body">
-<h5 class="card-title">Email</h5>
-<p class="card-text"><%=@user.email%>
+<div class="container">
+<p align="center"> <%= @user.username %>'s Articles </p>
+<p align="center">
+<%= link_to "Back TO User page", users_path, class: 'btn btn-primary' %>
 </p>
 </div>
-<div class="card-footer text-muted bg-success">
-    <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %>
-    
-
-    <%= link_to "delete", user_path(@user), method: :delete, data:{confirm:"are you sure to delete this"}, class:"btn btn-danger" %>
-    <%=link_to "All Users",users_path, class: "btn btn-success"%>
-    
-  </div>
-</div>
+<%= render 'articles/article', obj: @user.articles %>
 </div>

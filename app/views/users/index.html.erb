@@ -1,6 +1,6 @@
 <h1 align="center"> ALL USERS</h1>
 
-<p align="center"> <%= link_to "CREATE NEW User", signup_path, class:"btn btn-success" %></p> 
+<p align="center"> <%= link_to "CREATE NEW User", signup_path, class:"btn btn-warning" %></p> 
   
 <% @users.each do |article| %>
 <div class="row">
@@ -8,7 +8,7 @@
 <div class="card text-center">
 
 
-<div class="card-header bg-danger">
+<div class="card-header bg-dark">
 <%= link_to (article.username), user_path(article), class: 'btn btn-success' %>
 </div>
 <div class="card-body">
