@@ -28,10 +28,16 @@
       <li class="nav-item">
         <%= link_to 'User', users_path, class:"nav-link", style:"color:white"%>
       </li>
+      
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <%= link_to 'signup', signup_path, class:"nav-link", style:"color:white"%>
+
+        <span class="glyphicon glyphicon-user"></span><%= link_to 'Login' , signup_path %> </span>
+      
+      
     </form>
   </div>
 </nav>

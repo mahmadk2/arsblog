@@ -3,39 +3,19 @@
 <p align="center"> <%= link_to "CREATE NEW User", signup_path, class:"btn btn-warning" %></p> 
   
 <% @users.each do |article| %>
+
 <div class="row">
 <div class="container">
 <div class="card text-center">
 
 
-<div class="card-header bg-dark">
-<%= link_to (article.username), user_path(article), class: 'btn btn-success' %>
-</div>
-<div class="card-body">
-<h5 class="card-title">Email Address is:</h5>
-<p class="card-text">
-<%= article.email %></p>
-</div>
-<div class="article-meta-details">
-
-<small>
-
-<%= time_ago_in_words(article.created_at) %> ago,
-
-last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
-
+<div class="card-header ">
+<%= link_to has_gravatar(article), user_path(article) %>
+<p> <%= link_to article.username, user_path(article)%></p>
+Total Articles <P><%= article.articles.count %>
 </div>
 
-<div class="card-footer text-muted bg-primary">
-<%= link_to 'Edit', edit_user_path(article),class: "btn btn-success" %>
-
-<%= link_to 'Show', user_path(article), class: "btn btn-dark" %>
-<%= link_to 'Delete', user_path(article), method: :delete, data:{confirm:"are you sure"}, class:"btn btn-danger"%>
+</div>
 </div>
 </div>
 <% end %>
-</div>
-
-
-</div>
-</div>
