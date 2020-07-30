@@ -1,10 +1,28 @@
 <h1 align="center"> ALL ARTICLES</h1>
 
-<p align="center"> <%= link_to "CREATE NEW ARTICLE", new_article_path, class:"btn btn-success" %></p> 
+<p align="center"> <%= link_to "CREATE NEW ARTICLE", new_article_path, class:"btn btn-success" %></p><div class="container"> 
+<div class="col">
   
+      <%= will_paginate class: "pagination justify-content-center" %>
+</div>
+</div>
+   
+   <div class="container"> 
+
+
 <%= render 'article', obj: @articles %>
 
+  
+ <div class="offset-4">
+      <%= will_paginate  %> 
+
+</div>
+     
+     	<div class=" col offset-4">
+      <%= page_entries_info  %> 
+     </div>
+   </div>
 
 
-
+   
 
