@@ -15,7 +15,7 @@ end
 def create
 @user = User.new(user_params)
 if @user.save
-
+session[:user_id] = @user.id
 	flash[:success] = "wel come to blog #{@user.username}"
 	redirect_to user_path(@user)
 else
