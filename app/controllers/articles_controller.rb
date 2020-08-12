@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
    before_action :set_article, only: [:edit, :update, :show, :destroy]
-   before_action :require_user,only: [:edit, :update]
+   before_action :require_user,expect: [:index, :show]
    before_action :require_same_user,only: [:edit, :update,  :destroy]
   def index
     @articles = Article.paginate(page: params[:page], per_page:3)
@@ -54,8 +54,8 @@ class ArticlesController < ApplicationController
      end
 
      def require_same_user
-     if current_user != @article.user
-      flash[:danger]="require the same user"
+     if current_user != @article.user and !current_user.admin?
+      flash[:danger]="require the same user or admin"
 
       redirect_to articles_path
     end

@@ -47,7 +47,7 @@
        <%= link_to 'Log out', logout_path, method: :delete, class: "nav-link",style:"color:white", method: :delete %>
         <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-          profile
+          profile:<%= "Admin" if current_user.admin?%> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           
@@ -61,6 +61,7 @@
   
         <% end%>
         <% if ! signed_in? %>
+        <i class="fas fa-user-alt"></i><span>  <%= link_to 'SignUp' , signup_path, class: "nav-link ", style:"color:white" %> </span>
         <i class="fas fa-user-alt"></i><span>  <%= link_to 'Login' , login_path, class: "nav-link ", style:"color:white" %> </span>
         <% end %>
 

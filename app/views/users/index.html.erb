@@ -1,6 +1,12 @@
 <h1 align="center"> ALL USERS</h1>
 
-<p align="center"> <%= link_to "CREATE NEW User", signup_path, class:"btn btn-warning" %></p> 
+<p align="center"> <%= link_to "SIGNUP", signup_path, class:"btn btn-warning" %></p> 
+<div class="container"> 
+<div class="col">
+  
+      <%= will_paginate class: "pagination justify-content-center" %>
+</div>
+</div>
   
 <% @users.each do |article| %>
 

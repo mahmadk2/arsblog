@@ -12,7 +12,7 @@ def require_user
 
 	if !signed_in?
 
-		flash[:danger] ="user required for this steps"
+		flash[:danger] ="user login required for this steps"
 
 	redirect_to root_path
 end
