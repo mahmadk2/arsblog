@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
    before_action :set_article, only: [:edit, :update, :show, :destroy]
    before_action :require_user,expect: [:index, :show]
    before_action :require_same_user,only: [:edit, :update,  :destroy]
+   before_action :admin_require, only: [:destroy]
   def index
     @articles = Article.paginate(page: params[:page], per_page:3)
   end
@@ -59,6 +60,16 @@ class ArticlesController < ApplicationController
 
       redirect_to articles_path
     end
+     end
+
+     def admin_require
+     if signed_in? and !current_user.admin?
+
+      flash[:danger]="this action only perform by admin"
+
+      redirect_to users_path
+    end
+  end
      end
      	
 
