@@ -70,7 +70,7 @@ class ArticlesController < ApplicationController
       redirect_to users_path
     end
   end
-     end
+  
      	
 
 end

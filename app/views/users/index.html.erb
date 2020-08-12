@@ -21,7 +21,7 @@
 Total Articles <P><%= article.articles.count %>
 	<p>
 		<% if signed_in? && (current_user == article  || current_user.admin?) %>
-<%= link_to 'delete user', user_path(article), method: :delete, data: {confirm: "are you sure to delete this user aand his all articles "} %></p>
+<%= link_to 'delete user', user_path(article), method: :delete, data: {confirm: "are you sure to delete this user and his all articles "} %></p>
 <% end %>
 </div>
 
