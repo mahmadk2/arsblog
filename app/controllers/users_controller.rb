@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
  before_action :set_user, only: [:edit, :update, :show, :destroy]
- before_action :require_same_user, only: [:edit, :update, :destroy]
+ before_action :require_same_user, except: [:index, :show]
  before_action :require_admin, only: [:destroy]
 def index
 	@users = User.paginate(page: params[:page], per_page:3)
@@ -66,9 +66,9 @@ params.require(:user).permit(:username,:email,:password)
      end
      def require_admin
 
-if signed_in? and !current_user.admin?
+if signed_in? and  !current_user.admin? 
 
-flash[:danger] = "Only admin users can perform that action"
+flash[:danger] = "Only admin users can delete that"
 
 redirect_to root_path
 

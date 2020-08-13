@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :articles
+	has_many :articles, dependent: :destroy
 	has_secure_password
   has_secure_password :recovery_password, validations: false
 	before_save {self.email = email.downcase}

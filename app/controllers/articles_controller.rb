@@ -63,7 +63,7 @@ class ArticlesController < ApplicationController
      end
 
      def admin_require
-     if signed_in? and !current_user.admin?
+     if signed_in? && (current_user !=@user || !current_user.admin?)
 
       flash[:danger]="this action only perform by admin"
 
