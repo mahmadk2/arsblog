@@ -1,0 +1,42 @@
+<h1 align="center"> All categories</h1>
+
+<% if signed_in? %>
+<p align="center"> <%= link_to "new category", new_category_path, class:"btn btn-success" %></p>
+<%end%>
+<div class="container"> 
+<div class="col">
+  
+      <%= will_paginate class: "pagination justify-content-center" %>
+</div>
+</div>
+   
+   <% @categories.each do |category| %>
+<div class="container">
+	<div class="col-6  offset-3">
+
+
+<div class="container bg-primary">
+
+	<div class="ul">
+<p align="center"> <%= link_to (category.name), category_path(category), class: 'btn btn-primary' %></p>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<% end %>
+
+
+
+  
+ <div class="offset-4">
+      <%= will_paginate  %> 
+
+</div>
+     
+     	
+     
+   </div>
+
