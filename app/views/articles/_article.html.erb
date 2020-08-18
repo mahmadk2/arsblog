@@ -21,6 +21,11 @@
 last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
 
 </div>
+<p>
+<% if article.categories.any? %>
+<p>Categories:<%= render article.categories %></p>
+<%end%>
+	</p>
 
 <div class="card-footer text-muted bg-primary">
 	<% if signed_in? && (current_user == article.user  || current_user.admin?) %>

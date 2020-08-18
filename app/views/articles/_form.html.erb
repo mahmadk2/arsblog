@@ -31,9 +31,16 @@
 
 
 </p>
-
-
-
+<p>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-8 mb-4 offset-3">
+      <%=f.collection_check_boxes :category_ids, Category.all, :id, :name do |box|%>
+      <% box.label(class: "checkbox-inline input-checkbox") {box.check_box(class:"checkbox") + box.text} %>
+      <%end%>
+    </div>
+        </div>
+       </div></p>
 
 <p>
 <div class="form-row">

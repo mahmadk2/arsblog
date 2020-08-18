@@ -9,6 +9,11 @@
 <h5 class="card-title">Discription</h5>
 <p class="card-text"><%=@article.discription%>
 </p>
+<p>
+<% if @article.categories.any? %>
+<p>Categories:<%= render @article.categories %></p>
+<%end%>
+	</p>
 <div class="article-meta-details">
 
 <small>Created by: <%= link_to @article.user.username, user_path(@article.user) if @article.user%>,

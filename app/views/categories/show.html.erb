@@ -1,16 +1,31 @@
- <h1 align="center"> show category </h1>
+ <h1 align="center"> Category: <%= @category.name %></h1>
 
 
    
   
 
-<div class="container">
-<p align="center"> <%= @category.name %>'s Articles </p>
- 
+<div class="container"> 
+<div class="col">
+  
+      <%= will_paginate @category_articles, class: "pagination justify-content-center" %>
+</div>
+</div>
+   
+   <div class="container"> 
+
+
+<%= render 'articles/article', obj: @category_articles %>
+
+  
+ <div class="offset-4">
+      <%= will_paginate @category_articles %> 
 
 </div>
-
-</div>
-<p align="center">
+     
+     	<div class=" col offset-4">
+      <%= page_entries_info @category_articles %> 
+     </div>
+     
+   </div>
 <%= link_to "Back To Category", categories_path, class: 'btn btn-primary' %>
 </p>

@@ -1,0 +1,24 @@
+<h1 align="center"> Edit Category</h1>
+
+<%= render 'share/error', obj: @category %>
+
+<div class="row">
+<div class="container offset-3">
+ <div class="form-group">
+	<%= form_for @category do |f| %>
+	<div class="col-4">
+   <%= f.label :name%>
+ </div>
+ <div class="col-8">
+   <%= f.text_field :name, class:"form-control is-valid", placeholder:"here name" %>
+   <div class="valid-feedback">name</div>
+ </div>
+
+
+ <div class="col-sm-8 offset-3">
+   <%= f.submit class:"btn btn-primary" %>
+ </div>
+</div>
+	<%end%>
+</div>
+</div>
