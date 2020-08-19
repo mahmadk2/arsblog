@@ -14,7 +14,7 @@
           
           <%= link_to "all Categories", categories_path, class: 'dropdown-item'%>
           <% Category.all.each do |category| %>
-          <%= link_to "#{category.name}", category_path(category), class: 'dropdown-item'%>
+          <%= link_to ("#{category.name} ").upcase , category_path(category), class: 'dropdown-item'%>
           <%end%>
           <div class="dropdown-divider"></div>
           <% if signed_in? and current_user.admin? %>

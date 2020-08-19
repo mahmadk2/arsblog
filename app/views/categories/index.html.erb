@@ -1,6 +1,6 @@
 <h1 align="center"> All categories</h1>
 
-<% if signed_in? %>
+<% if signed_in? and current_user.admin? %>
 <p align="center"> <%= link_to "new category", new_category_path, class:"btn btn-success" %></p>
 <%end%>
 <div class="container"> 
@@ -19,7 +19,9 @@
 
 	<div class="ul">
 <p align="center"> <%= link_to (category.name), category_path(category), class: 'btn btn-primary' %></p>
+
 </div>
+<p align="center"> <%= link_to pluralize(category.articles.count, "Article"), category_path(category), style:'color:white'%></p>
 </div>
 
 </div>
