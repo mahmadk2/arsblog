@@ -1,9 +1,10 @@
  <h1 align="center"> Category: <%= @category.name.upcase  %></h1>
 
-   
+   <% if signed_in? %>
  <p align="center"> <%= link_to 'Edit this Category', edit_category_path(@category), class: 'btn btn-primary'%></p>
+ <%end%>
 <div class="container"> 
-<div class="col">
+<div class="col ">
   
       <%= will_paginate @category_articles, class: "pagination justify-content-center" %>
 </div>
@@ -15,7 +16,7 @@
 <%= render 'articles/article', obj: @category_articles %>
 
   
- <div class="offset-4">
+ <div class="offset-5">
       <%= will_paginate @category_articles %> 
 
 </div>
